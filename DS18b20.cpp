@@ -57,6 +57,8 @@ float DS18b20::GetTemp() {
     //DBG(d[i], HEX);
     //DBG(" ");
   }
+
+  // Convert units to degrees. One unit is 0.0625 celcius (1/16).
   int value = int(d[1] << 8) | d[0];
   float retvalue = (float)(value);
   return retvalue / 16;
